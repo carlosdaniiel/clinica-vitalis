@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #E85D4E;
+  color: #FAFAF8;
+}
+
+/* Foco de teclado visível em toda a aplicação */
+:focus-visible {
+  outline: 2px solid #E85D4E;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.18em] text-primary;
+}
+
+.section-title {
+  @apply font-display text-3xl md:text-4xl lg:text-[2.75rem] leading-tight text-ink;
+}
+
+.container-clinic {
+  @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+}
